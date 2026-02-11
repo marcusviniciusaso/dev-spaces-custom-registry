@@ -1,0 +1,15 @@
+[
+  {
+    "name": "custom-udi",
+    "displayName": "Dev Spaces Custom UDI",
+    "description": "Ambiente Enterprise com Azure CLI, Kind, Podman...",
+    "type": "stack",
+    "tags": ["Red Hat", "RHEL9", "Custom"],
+    "icon": "https://www.redhat.com/rhdc/managed-files/rhb-logos-red_hat_logo-hero_image_1.svg",
+    "links": {
+      "self": "/devfiles/custom-udi/devfile.yaml"
+    },
+    "resources": ["devfile.yaml"],
+    "language": "Shell"
+  }
+]
