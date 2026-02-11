@@ -1,0 +1,48 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: dev-spaces-custom-registry
+  namespace: devspaces
+  labels:
+    app: dev-spaces-custom-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-spaces-custom-registry
+  template:
+    metadata:
+      labels:
+        app: dev-spaces-custom-registry
+    spec:
+      containers:
+        - name: registry
+          image: quay.io/marolive/dev-spaces-custom-registry:1.0.0
+          ports:
+            - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: dev-spaces-custom-registry
+  namespace: devspaces
+spec:
+  selector:
+    app: dev-spaces-custom-registry
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: dev-spaces-custom-registry
+  namespace: devspaces
+spec:
+  to:
+    kind: Service
+    name: dev-spaces-custom-registry
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
