@@ -3,13 +3,13 @@
 ## Build image
 
 ```
-podman build -t quay.io/marolive/dev-spaces-custom-registry:1.0.6 .
+podman build -t quay.io/marolive/dev-spaces-custom-registry:1.0.7 .
 ```
 
 ## Push image
 
 ```
-podman push quay.io/marolive/dev-spaces-custom-registry:1.0.6
+podman push quay.io/marolive/dev-spaces-custom-registry:1.0.7
 ```
 
 ## Create Dev Spaces custom registry
