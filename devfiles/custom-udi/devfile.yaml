@@ -3,7 +3,7 @@ metadata:
   name: custom-base-udi
   displayName: "Custom Base UDI(Dev Spaces 3.22)"
   description: "Container com tools baseado na UDI com az/kubectl/helm/oc/cekit/kind/podman..."
-  version: 1.0.4
+  version: 1.1.2
   tags: ["openshift", "kubernetes", "helm", "podman", "azure"]
 components:
   - name: tools
@@ -31,6 +31,11 @@ commands:
       group:
         kind: run
         isDefault: true
+  - id: configure-yum-repo
+    exec:
+      component: tools
+      commandLine: "sed \"s|NEXUS_BASEURL_PLACEHOLDER|$NEXUS_BASEURL|g\" /etc/yum.repos.d/nexus-repo.repo > /tmp/repo.tmp && cat /tmp/repo.tmp > /etc/yum.repos.d/nexus-repo.repo"
 events:
   postStart:
     - verify
+    - configure-yum-repo
