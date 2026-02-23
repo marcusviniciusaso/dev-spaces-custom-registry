@@ -18,7 +18,7 @@
     "description": "Imagem baseada no custom-udi com Java 11, Maven 3.6.3, Gradle 7.6.6, Spring Boot CLI 2.7.18",
     "type": "stack",
     "tags": ["Java", "Spring Boot", "Maven", "Gradle", "RHEL9"],
-    "icon": "https://openjdk.org/images/openjdk2.svg",
+    "icon": "https://www.redhat.com/rhdc/managed-files/rhb-logos-red_hat_logo-hero_image_1.svg",
     "links": {
       "self": "/devfiles/custom-udi-java11/devfile.yaml"
     },
