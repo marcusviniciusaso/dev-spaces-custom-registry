@@ -39,3 +39,11 @@ spec:
       externalDevfileRegistries:
         - url: 'https://<EXTERNAL_REGISTRY_ROUTE>'
 ```
+
+## Configure Repository (Optional)
+
+Apply to user workspace namespace
+
+```
+oc apply -f repositories-secret.yaml
+```
