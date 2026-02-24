@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: registry
-          image: quay.io/marolive/dev-spaces-custom-registry:1.0.9
+          image: quay.io/marolive/dev-spaces-custom-registry:1.0.10
           ports:
             - containerPort: 8080
 ---
