@@ -24,5 +24,18 @@
     },
     "resources": ["devfile.yaml"],
     "language": "Java"
-  }
+  },
+  {
+    "name": "custom-udi-java25",
+    "displayName": "Java 25 (Maven 3.9.12 / Gradle 9.3.1 / Spring Boot CLI 4.0.3)",
+    "description": "Imagem baseada no custom-udi com Java 25, Maven 3.9.12, Gradle 9.3.1, Spring Boot CLI 4.0.3",
+    "type": "stack",
+    "tags": ["Java", "Spring Boot", "Maven", "Gradle", "RHEL9"],
+    "icon": "https://www.redhat.com/rhdc/managed-files/rhb-logos-red_hat_logo-hero_image_1.svg",
+    "links": {
+      "self": "/devfiles/custom-udi-java25/devfile.yaml"
+    },
+    "resources": ["devfile.yaml"],
+    "language": "Java"
+  }  
 ]
