@@ -1,18 +1,15 @@
 schemaVersion: 2.2.0
 metadata:
-  name: custom-base-udi
-  displayName: "Custom Base UDI(Dev Spaces 3.22)"
-  description: "Container com tools baseado na UDI com az/kubectl/helm/oc/cekit/kind/podman..."
-  version: 1.2.2
-  tags: ["openshift", "kubernetes", "helm", "podman", "azure"]
+  name: kubedock-sample-devfile
+  version: 1.0.0
 components:
   - name: tools
     container:
       image: quay.io/marolive/custom-udi:1.1.2
-      mountSources: true
-      sourceMapping: /projects
-      memoryLimit: 4Gi
+      memoryLimit: 8Gi
+      memoryRequest: 1Gi
       cpuLimit: "2"
+      cpuRequest: 200m
       env:
         - name: KUBEDOCK_ENABLED
           value: 'true'
@@ -22,10 +19,15 @@ components:
           value: 'true'
         - name: TESTCONTAINERS_CHECKS_DISABLE
           value: 'true'
-        - name: NEXUS_BASEURL
-          value: "https://<NEXUSREPOSITORY>:8443/repository/public-yum-central"
       endpoints:
         - exposure: none
           name: kubedock
           protocol: tcp
           targetPort: 2475
+        - exposure: public
+          name: http-booster
+          protocol: http
+          targetPort: 8080
+          attributes:
+            discoverable: true
+            urlRewriteSupported: true

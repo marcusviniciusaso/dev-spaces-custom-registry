@@ -63,5 +63,18 @@
     },
     "resources": ["devfile.yaml"],
     "language": "Java"
+  },
+  {
+    "name": "kubedock",
+    "displayName": "Kubedock",
+    "description": "Kubedock",
+    "type": "stack",
+    "tags": ["Kubedock"],
+    "icon": "https://www.redhat.com/rhdc/managed-files/rhb-logos-red_hat_logo-hero_image_1.svg",
+    "links": {
+      "self": "/devfiles/kubedock/devfile.yaml"
+    },
+    "resources": ["devfile.yaml"],
+    "language": "Shell"
   }
 ]
