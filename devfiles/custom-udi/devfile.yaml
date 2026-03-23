@@ -3,12 +3,12 @@ metadata:
   name: custom-base-udi
   displayName: "Custom Base UDI(Dev Spaces 3.22)"
   description: "Container com tools baseado na UDI com az/kubectl/helm/oc/cekit/kind/podman..."
-  version: 1.2.3
-  tags: ["openshift", "kubernetes", "helm", "podman", "azure"]
+  version: 1.2.8
+  tags: ["openshift", "kubernetes", "helm", "podman", "azure", "kubedock"]
 components:
   - name: tools
     container:
-      image: quay.io/marolive/custom-udi:1.2.0
+      image: quay.io/marolive/custom-udi:1.2.5
       mountSources: true
       sourceMapping: /projects
       memoryLimit: 4Gi
@@ -24,6 +24,8 @@ components:
           value: 'true'
         - name: NEXUS_BASEURL
           value: "https://<NEXUSREPOSITORY>:8443/repository/public-yum-central"
+        - name: "PODMAN_IGNORE_CGROUPSV1_WARNING"
+          value: "true"
       endpoints:
         - exposure: none
           name: kubedock

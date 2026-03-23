@@ -3,12 +3,12 @@ metadata:
   name: custom-udi-java25
   displayName: "Java 25 (Maven 3.9.12 / Gradle 9.3.1 / Spring Boot CLI 4.0.3)"
   description: "Java 25 para Maven 3.9.12, Gradle 9.3.1, Spring Boot CLI 4.0.3"
-  version: 1.0.4
+  version: 1.0.7
   tags: ["java", "spring", "maven", "gradle"]
 components:
   - name: tools
     container:
-      image: quay.io/marolive/custom-udi-java25:1.0.3
+      image: quay.io/marolive/custom-udi-java25:1.0.6
       mountSources: true
       sourceMapping: /projects
       memoryLimit: 2Gi
@@ -32,6 +32,8 @@ components:
           value: "https://<NEXUSREPOSITORY>:8443/repository/public-yum-central"
         - name: NEXUS_MAVEN_BASEURL
           value: "https://<NEXUSREPOSITORY>:8443/repository/public-maven-central/"
+        - name: "PODMAN_IGNORE_CGROUPSV1_WARNING"
+          value: "true"
       volumeMounts:
         - name: persistent-storage
           path: /home/user/persistent
