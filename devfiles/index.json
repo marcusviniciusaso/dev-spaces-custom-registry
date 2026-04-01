@@ -79,8 +79,8 @@
   },
   {
     "name": "custom-udi-node25",
-    "displayName": "Node 25.7.0 (npm 11.11.0 / NestJS 11.1.14)",
-    "description": "Imagem baseada no custom-udi com Node 25.7.0, npm 11.11.0 e NestJS 11.1.14",
+    "displayName": "Node 25.7.0 (npm 11.10.1 / NestJS 11.0.16)",
+    "description": "Imagem baseada no custom-udi com Node 25.7.0, npm 11.10.1 e NestJS 11.0.16",
     "type": "stack",
     "tags": ["Node.js", "NestJS", "npm", "RHEL9"],
     "icon": "https://www.redhat.com/rhdc/managed-files/rhb-logos-red_hat_logo-hero_image_1.svg",
